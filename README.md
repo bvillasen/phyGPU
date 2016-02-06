@@ -37,3 +37,22 @@ The easiest way to install virtualenv is by running:
 ```
 $ sudo pip install virtualenv
 ```
+###Installing phyGPU
+To install phyGPU make sure you are located in the phyGPU directory and just run the setup file (do not use sudo):
+```
+$ python setup.py
+```
+You will be asked the location where the phyGPU environment should be installed, by hitting ENTER the default phyGPU directory will be used. If you want to use another directory type the ABSOLUTE path and hit ENTER, then just accept the confirmation.
+
+
+This will create a directory called phyGPU_env and install a set of commonly used python modules: iPython(notebook), numpy, matplotlib and pyCUDA and pyOpenGL for real-time simulation and visualization of physics problems.  
+
+##Activating phyGPU
+To use phyGPU you need to activate it's phython environment, this will change the python PATH to the phyGPU python interpreter, so instead of using the "global" version of python you will be using the phyGPU "private" python version. To activate phyGPU run:
+```
+$ . activate_phyGPU
+```
+NOTE the dot at the beginning of the command, it will make the command to take effect in the current shell, without the dot the command will take effect in a child shell and phyGPU won't be active. Also you could use the alternative form:
+```
+$ source activate_phyGPU
+```
