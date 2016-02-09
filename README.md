@@ -56,3 +56,7 @@ NOTE the dot at the beginning of the command, it will make the command to take e
 ```
 $ source activate_phyGPU
 ```
+#TUTORIAL
+A brief tutorial on how to use phyGPU and pyCUDA is presented here.
+##Disclaimer
+This tutorial is not aimed to someone who is not familiar with CUDA programmig as it only covers the basic usage of pyCUDA and shows how to use pyCUDA at high level to solve common physics problems using phyGPU tools.
