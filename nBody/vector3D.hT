@@ -1,0 +1,73 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+class Vector3D{
+public:
+  float x;
+  float y;
+  float z;
+  // Constructor
+  __host__ __device__ Vector3D( float x0=0, float y0=0, float z0=0 ) : x(x0), y(y0), z(z0) {}
+  // Destructor
+//   __host__ __device__ ~Vector3D(){ delete[] &x; delete[] &y; delete[] &z;}
+  
+  
+  __host__ __device__ float norm( void ) { return sqrt( x*x + y*y + z*z ); };
+  
+  __host__ __device__ float norm2( void ) { return x*x + y*y + z*z; };
+  
+  __host__ __device__ void normalize(){
+    float mag = norm();
+    x /= mag;
+    y /= mag;
+    z /= mag;
+  }
+  
+  __host__ __device__ Vector3D operator+( const Vector3D &v ){
+    return Vector3D( x+v.x, y+v.y, z+v.z );
+  }
+  
+  __host__ __device__ Vector3D operator-( const Vector3D &v ){
+    return Vector3D( x-v.x, y-v.y, z-v.z );
+  }
+  
+  __host__ __device__ float operator*( const Vector3D &v ){
+    return x*v.x + y*v.y + z*v.z;
+  }
+  
+  __host__ __device__ Vector3D operator*( const float a ){
+    return Vector3D( a*x, a*y, a*z );
+  }  
+  
+  __host__ __device__ Vector3D& operator+=(const Vector3D &v) {
+	  x+=v.x;
+	  y+=v.y;
+	  z+=v.z;
+	  return *this;
+  }
+  __host__ __device__ Vector3D& operator-=(const Vector3D &v) {
+	  x-=v.x;
+	  y-=v.y;
+	  z-=v.z;
+	  return *this;
+  }
+  __host__ __device__ Vector3D& operator*=(const float a) {
+	  x*=a;
+	  y*=a;
+	  z*=a;
+	  return *this;
+  }
+  
+  __host__ __device__ void redefine( float x0, float y0, float z0 ){
+    x = x0;
+    y = y0;
+    z = z0;
+  }
+  
+  
+    
+  
+};
+  
