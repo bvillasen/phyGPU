@@ -11,15 +11,15 @@ BIN_DIR=$ENV_DIR/$ENV_NAME/binaries
 cd $ENV_DIR
 python $VIRT_ENV_DIR/virtualenv.py $ENV_NAME
 chmod 777 $ENV_NAME/bin/activate
-#
-# # Create activation comand under binaries directory
-# mkdir $BIN_DIR
-# touch $BIN_DIR/activate_phyGPU
-# LINE="echo Welcome to phyGPU to exit type deactivate"
-# echo $LINE >> $BIN_DIR/activate_phyGPU
-# LINE="source $ENV_DIR/$ENV_NAME/bin/activate"
-# echo $LINE >> $BIN_DIR/activate_phyGPU
-# chmod 777 $BIN_DIR/activate_phyGPU
+
+# Create activation comand under binaries directory
+mkdir $BIN_DIR
+touch $BIN_DIR/activate_phyGPU
+LINE="echo Welcome to phyGPU to exit type deactivate"
+echo $LINE >> $BIN_DIR/activate_phyGPU
+LINE="source $ENV_DIR/$ENV_NAME/bin/activate"
+echo $LINE >> $BIN_DIR/activate_phyGPU
+chmod 777 $BIN_DIR/activate_phyGPU
 #
 # #Add binaries directory to your path
 # LINE="export PATH=$BIN_DIR:\$PATH"
