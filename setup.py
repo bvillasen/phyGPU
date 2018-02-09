@@ -46,4 +46,4 @@ if not os.path.exists( envDir ): os.makedirs( envDir )
 # replaceAll( 'install.sh', line_toFind, line_toReplace )
 
 #Install the virtual environment
-os.system('bash install.sh {0}'.format(envDir))
+# os.system('bash install.sh {0}'.format(envDir))
