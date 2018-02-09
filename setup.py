@@ -35,7 +35,7 @@ currentDir = os.getcwd()
 line = "\nEnter the directory path were phyGPU enviroment will be added\nDefault: {0} \nHit ENTER to use default current directory\n".format(currentDir)
 while not ready:
   ans = raw_input(line)
-  if ans == '': envDir = currentDir
+  if ans == '': envDir = currentDir + "/phyGPU_env"
   else: envDir = ans
   question = 'pyhGPU will be installed in: {0}  .Is this OK?(y/n)'.format(envDir)
   ready = ask( question )
